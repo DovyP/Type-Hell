@@ -5,6 +5,7 @@ public class WordGenerator : MonoBehaviour
 {
     private static string[] wordList;
 
+
     private void Start()
     {
         ReadWordsFromData();
