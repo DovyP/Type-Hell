@@ -10,10 +10,12 @@ public class WordManager : MonoBehaviour
     private Word activeWord;
 
     private WordReader wordReader;
+    private ZedSpawner zedSpawner;
 
     private void Awake()
     {
         wordReader = GetComponent<WordReader>();
+        zedSpawner = GetComponent<ZedSpawner>();
     }
 
     private void Start()
@@ -28,7 +30,9 @@ public class WordManager : MonoBehaviour
 
     private void InsertWord()
     {
-        Word word = new Word(wordReader.GetRandomWordFromDataList());
+        //ZedWordUI zedWordUI = zedSpawner.SpawnZed();
+
+        Word word = new Word(wordReader.GetRandomWordFromDataList(), zedSpawner.SpawnZed());
         Debug.Log(word.word);
 
         parsedWordList.Insert(0, word);

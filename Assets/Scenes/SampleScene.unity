@@ -487,7 +487,7 @@ GameObject:
   - component: {fileID: 693895481}
   - component: {fileID: 693895480}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -674,6 +674,7 @@ GameObject:
   - component: {fileID: 917732427}
   - component: {fileID: 917732428}
   - component: {fileID: 917732429}
+  - component: {fileID: 917732430}
   m_Layer: 0
   m_Name: WordHandler
   m_TagString: Untagged
@@ -708,7 +709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57bc1ec3c32b5264994076a3f60f73f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordList: []
 --- !u!114 &917732428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,6 +734,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordManager: {fileID: 917732427}
+--- !u!114 &917732430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917732425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06d1014163f81e4fb0169b636c801d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zedPrefab: {fileID: 2770997089379676369, guid: a3ce1ad42e3da354c992b95d4e6438ac,
+    type: 3}
 --- !u!1 &1152744732
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1585653217}
   m_Layer: 0
-  m_Name: ---ENV---
+  m_Name: ENVIRONMENT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -842,7 +856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1891770915}
   m_Layer: 0
-  m_Name: MODEL
+  m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -975,6 +989,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1152744733}
-  - {fileID: 1585653217}
   - {fileID: 1820281792}
+  - {fileID: 1585653217}
   - {fileID: 561260707}

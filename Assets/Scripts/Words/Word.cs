@@ -4,10 +4,14 @@ public class Word
     public string word;
     private int characterIndex;
 
-    public Word(string word)
+    private ZedWordUI zedWordUI;
+
+    public Word(string word, ZedWordUI zedWordUI)
     {
         this.word = word;
         characterIndex = 0;
+        this.zedWordUI = zedWordUI;
+        zedWordUI.SetWordText(word);
     }
 
     public char GetNextCharacter()
