@@ -1,54 +1,56 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(WordGenerator))]
+[RequireComponent(typeof(WordReader))]
 public class WordManager : MonoBehaviour
 {
-    [SerializeField] private List<Word> wordList;
+    private List<Word> parsedWordList = new List<Word>();
 
     private bool hasActiveWord;
     private Word activeWord;
 
-    private WordGenerator wordGenerator;
+    private WordReader wordReader;
 
     private void Awake()
     {
-        wordGenerator = GetComponent<WordGenerator>();
+        wordReader = GetComponent<WordReader>();
     }
 
     private void Start()
     {
-        for (int i = 0; i < 300; i++)
+        wordReader.ReadWordsFromData();
+
+        for (int i = 0; i < 300; i++) 
         {
-            AddWord();
+            InsertWord();
         }
     }
 
-    private void AddWord()
+    private void InsertWord()
     {
-        Word word = new Word(wordGenerator.GetRandomWord());
-        wordList.Add(word);
+        Word word = new Word(wordReader.GetRandomWordFromDataList());
+        Debug.Log(word.word);
+
+        parsedWordList.Insert(0, word);
     }
 
-    private void TypeCharacter(char character)
+    public void TypeCharacter(char letter)
     {
         if (hasActiveWord)
         {
-            // Check if letter was next
-            if(activeWord.GetNextCharacter() == character)
+            if (activeWord.GetNextCharacter() == letter)
             {
                 activeWord.TypeCharacter();
             }
-                // Remove it from the word
         }
         else
         {
-            foreach(Word word in wordList)
+            foreach (Word word in parsedWordList)
             {
-                if(word.GetNextCharacter() == character)
+                if (word.GetNextCharacter() == letter)
                 {
                     activeWord = word;
+                    Debug.Log("Active word: " + activeWord.word);
                     hasActiveWord = true;
                     word.TypeCharacter();
                     break;
@@ -59,7 +61,8 @@ public class WordManager : MonoBehaviour
         if (hasActiveWord && activeWord.WordTyped())
         {
             hasActiveWord = false;
-            wordList.Remove(activeWord);
+            Debug.Log("Remove from list: " + activeWord.word);
+            parsedWordList.Remove(activeWord);
         }
     }
 }

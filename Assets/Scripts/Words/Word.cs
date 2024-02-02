@@ -1,31 +1,29 @@
-using System;
-
-[Serializable]
+[System.Serializable]
 public class Word
 {
     public string word;
-    private int typeIndex;
+    private int characterIndex;
 
     public Word(string word)
     {
         this.word = word;
-        typeIndex = 0;
+        characterIndex = 0;
     }
 
     public char GetNextCharacter()
     {
-        return word[typeIndex];
+        return word[characterIndex];
     }
 
     public void TypeCharacter()
     {
-        typeIndex++;
+        characterIndex++;
         // Remove the letter on screen
     }
 
     public bool WordTyped()
     {
-        bool wordTyped = (typeIndex >= word.Length);
+        bool wordTyped = (characterIndex >= word.Length);
 
         if (wordTyped)
         {

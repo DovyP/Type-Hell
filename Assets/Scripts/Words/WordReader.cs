@@ -1,17 +1,11 @@
 using System.IO;
 using UnityEngine;
 
-public class WordGenerator : MonoBehaviour
+public class WordReader : MonoBehaviour
 {
-    private static string[] wordList;
+    private string[] wordList;
 
-
-    private void Start()
-    {
-        ReadWordsFromData();
-    }
-
-    public string GetRandomWord()
+    public string GetRandomWordFromDataList()
     {
         int randomIndex = Random.Range(0, wordList.Length);
         string randomWord = wordList[randomIndex];
@@ -19,7 +13,7 @@ public class WordGenerator : MonoBehaviour
         return randomWord;
     }
 
-    private void ReadWordsFromData()
+    public void ReadWordsFromData()
     {
         Debug.Log("[In Progress] Reading words from the data...");
 
