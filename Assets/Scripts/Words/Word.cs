@@ -22,7 +22,7 @@ public class Word
     public void TypeCharacter()
     {
         characterIndex++;
-        // Remove the letter on screen
+        zedWordUI.RemoveCharacter();
     }
 
     public bool WordTyped()
@@ -31,7 +31,7 @@ public class Word
 
         if (wordTyped)
         {
-            // Remove the word on screen
+            zedWordUI.RemoveZed();
         }
 
         return wordTyped;

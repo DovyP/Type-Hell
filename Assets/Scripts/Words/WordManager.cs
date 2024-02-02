@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(WordReader))]
 public class WordManager : MonoBehaviour
 {
+    [SerializeField] private int wordAmount = 5;
+
     private List<Word> parsedWordList = new List<Word>();
 
     private bool hasActiveWord;
@@ -22,7 +24,7 @@ public class WordManager : MonoBehaviour
     {
         wordReader.ReadWordsFromData();
 
-        for (int i = 0; i < 300; i++) 
+        for (int i = 0; i < wordAmount; i++) 
         {
             InsertWord();
         }
