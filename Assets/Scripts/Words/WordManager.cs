@@ -51,6 +51,7 @@ public class WordManager : MonoBehaviour
                     activeWord = word;
                     Debug.Log("Active word: " + activeWord.word);
                     hasActiveWord = true;
+                    word.ActivateIndicator();
                     word.TypeCharacter();
                     break;
                 }

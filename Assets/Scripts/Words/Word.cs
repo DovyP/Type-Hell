@@ -27,6 +27,11 @@ public class Word
         zedWordUI.RemoveCharacter();
     }
 
+    public void ActivateIndicator()
+    {
+        zedWordUI.ActivateIndicator();
+    }
+
     public bool WordTyped()
     {
         bool wordTyped = (characterIndex >= word.Length);
