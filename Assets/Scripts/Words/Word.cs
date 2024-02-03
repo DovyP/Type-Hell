@@ -6,12 +6,12 @@ public class Word
 
     private ZedWordUI zedWordUI;
     private Zed zed;
-    /*ZedWordUI zedWordUI*/
-    public Word(string word, Zed zed)
+
+    public Word(string word, ZedWordUI zedWordUI, Zed zed)
     {
         this.word = word;
         characterIndex = 0;
-        //this.zedWordUI = zedWordUI;
+        this.zedWordUI = zedWordUI;
         this.zed = zed;
         zedWordUI.SetWordText(word);
     }
@@ -33,7 +33,7 @@ public class Word
 
         if (wordTyped)
         {
-            zedWordUI.RemoveZed();
+            zed.KillZed();
         }
 
         return wordTyped;

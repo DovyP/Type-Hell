@@ -116,6 +116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054596931196538634}
+  - component: {fileID: 7333784325910156340}
   m_Layer: 0
   m_Name: ZedPlaceholder
   m_TagString: Untagged
@@ -140,6 +141,19 @@ Transform:
   - {fileID: 2636759665266703937}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7333784325910156340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2770997089379676369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d92e28f673927ec45b652c26278b7ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zedWordUI: {fileID: 2270970368656164757}
 --- !u!1 &6333411644172009263
 GameObject:
   m_ObjectHideFlags: 0

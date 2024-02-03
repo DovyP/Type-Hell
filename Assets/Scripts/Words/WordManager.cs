@@ -25,10 +25,10 @@ public class WordManager : MonoBehaviour
 
     public void InsertWord()
     {
-        //ZedWordUI zedWordUI = zedSpawner.SpawnZed();
+        Zed zed = zedSpawner.SpawnZed();
+        ZedWordUI zedWordUI = zed.GetZedWordUI();
 
-        Word word = new Word(wordReader.GetRandomWordFromDataList(), zedSpawner.SpawnZed());
-        //Debug.Log(word.word);
+        Word word = new Word(wordReader.GetRandomWordFromDataList(), zedWordUI, zed);
 
         parsedWordList.Add(word);
     }
