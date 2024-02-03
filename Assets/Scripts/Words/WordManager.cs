@@ -10,28 +10,27 @@ public class WordManager : MonoBehaviour
     private Word activeWord;
 
     private WordReader wordReader;
+    private ZedSpawner zedSpawner;
 
     private void Awake()
     {
         wordReader = GetComponent<WordReader>();
+        zedSpawner = GetComponent<ZedSpawner>();
     }
 
     private void Start()
     {
         wordReader.ReadWordsFromData();
-
-        for (int i = 0; i < 300; i++) 
-        {
-            InsertWord();
-        }
     }
 
-    private void InsertWord()
+    public void InsertWord()
     {
-        Word word = new Word(wordReader.GetRandomWordFromDataList());
-        Debug.Log(word.word);
+        Zed zed = zedSpawner.SpawnZed();
+        ZedWordUI zedWordUI = zed.GetZedWordUI();
 
-        parsedWordList.Insert(0, word);
+        Word word = new Word(wordReader.GetRandomWordFromDataList(), zedWordUI, zed);
+
+        parsedWordList.Add(word);
     }
 
     public void TypeCharacter(char letter)

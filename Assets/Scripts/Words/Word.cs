@@ -4,10 +4,16 @@ public class Word
     public string word;
     private int characterIndex;
 
-    public Word(string word)
+    private ZedWordUI zedWordUI;
+    private Zed zed;
+
+    public Word(string word, ZedWordUI zedWordUI, Zed zed)
     {
         this.word = word;
         characterIndex = 0;
+        this.zedWordUI = zedWordUI;
+        this.zed = zed;
+        zedWordUI.SetWordText(word);
     }
 
     public char GetNextCharacter()
@@ -18,7 +24,7 @@ public class Word
     public void TypeCharacter()
     {
         characterIndex++;
-        // Remove the letter on screen
+        zedWordUI.RemoveCharacter();
     }
 
     public bool WordTyped()
@@ -27,7 +33,7 @@ public class Word
 
         if (wordTyped)
         {
-            // Remove the word on screen
+            zed.KillZed();
         }
 
         return wordTyped;
