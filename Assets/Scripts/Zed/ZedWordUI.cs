@@ -7,6 +7,18 @@ public class ZedWordUI : MonoBehaviour
     //temporary
     [SerializeField] private GameObject zedParent;
 
+    private float zedSpeed;
+
+    private void Start()
+    {
+        zedSpeed = Random.Range(0.5f, 2f);
+    }
+
+    private void Update()
+    {
+        zedParent.transform.Translate(0f, 0f, -zedSpeed * Time.deltaTime);
+    }
+
     public void SetWordText(string word)
     {
         wordText.text = word;

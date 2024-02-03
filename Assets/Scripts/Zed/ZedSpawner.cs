@@ -7,7 +7,9 @@ public class ZedSpawner : MonoBehaviour
 
     public ZedWordUI SpawnZed()
     {
-        GameObject newZed = Instantiate(zedPrefab, zedParentTransform);
+        Vector3 randomPosition = new Vector3(Random.Range(-25f, 25f), 0, 30f);
+
+        GameObject newZed = Instantiate(zedPrefab, randomPosition, Quaternion.identity, zedParentTransform);
         ZedWordUI zedWordUI = newZed.GetComponentInChildren<ZedWordUI>();
 
         return zedWordUI;

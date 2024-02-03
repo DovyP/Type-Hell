@@ -4,8 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(WordReader))]
 public class WordManager : MonoBehaviour
 {
-    [SerializeField] private int wordAmount = 5;
-
     private List<Word> parsedWordList = new List<Word>();
 
     private bool hasActiveWord;
@@ -23,21 +21,16 @@ public class WordManager : MonoBehaviour
     private void Start()
     {
         wordReader.ReadWordsFromData();
-
-        for (int i = 0; i < wordAmount; i++) 
-        {
-            InsertWord();
-        }
     }
 
-    private void InsertWord()
+    public void InsertWord()
     {
         //ZedWordUI zedWordUI = zedSpawner.SpawnZed();
 
         Word word = new Word(wordReader.GetRandomWordFromDataList(), zedSpawner.SpawnZed());
-        Debug.Log(word.word);
+        //Debug.Log(word.word);
 
-        parsedWordList.Insert(0, word);
+        parsedWordList.Add(word);
     }
 
     public void TypeCharacter(char letter)

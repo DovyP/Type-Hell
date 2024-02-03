@@ -5,12 +5,14 @@ public class Word
     private int characterIndex;
 
     private ZedWordUI zedWordUI;
-
-    public Word(string word, ZedWordUI zedWordUI)
+    private Zed zed;
+    /*ZedWordUI zedWordUI*/
+    public Word(string word, Zed zed)
     {
         this.word = word;
         characterIndex = 0;
-        this.zedWordUI = zedWordUI;
+        //this.zedWordUI = zedWordUI;
+        this.zed = zed;
         zedWordUI.SetWordText(word);
     }
 
