@@ -1004,6 +1004,7 @@ Transform:
   m_Children:
   - {fileID: 8693653411857654838}
   - {fileID: 2636759665266703937}
+  - {fileID: 8153156645935291476}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7333784325910156340
@@ -1019,6 +1020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zedWordUI: {fileID: 2270970368656164757}
+  shootPoint: {fileID: 8153156645935291476}
 --- !u!1 &3291837508851484186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,6 +1921,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4528765617713144782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5280037484612875724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8153156645935291476}
+  m_Layer: 0
+  m_Name: ShootPOint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8153156645935291476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280037484612875724}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2054596931196538634}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5359761770541779373
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,7 +2444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordText: {fileID: 5683134688058831811}
-  wordIndicator: {fileID: 0}
+  wordIndicator: {fileID: 3677205839763348860}
   zedParent: {fileID: 2770997089379676369}
 --- !u!1 &6362889710330549585
 GameObject:

@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(WordReader))]
 public class WordManager : MonoBehaviour
 {
+    public UnityEvent eventas;
+
     private List<Word> parsedWordList = new List<Word>();
 
     private bool hasActiveWord;
@@ -11,6 +14,8 @@ public class WordManager : MonoBehaviour
 
     private WordReader wordReader;
     private ZedSpawner zedSpawner;
+    [SerializeField] private PlayerShooting playerShooting;
+    [SerializeField] private PlayerMovement playerMovement;
 
     private void Awake()
     {
@@ -40,6 +45,8 @@ public class WordManager : MonoBehaviour
             if (activeWord.GetNextCharacter() == letter)
             {
                 activeWord.TypeCharacter();
+                playerShooting.ShootLine(activeWord.GetZed().GetShootPoint());
+                playerMovement.RotateTowards(activeWord.GetZed().transform);
             }
         }
         else
@@ -53,6 +60,8 @@ public class WordManager : MonoBehaviour
                     hasActiveWord = true;
                     word.ActivateIndicator();
                     word.TypeCharacter();
+                    playerShooting.ShootLine(word.GetZed().GetShootPoint());
+                    playerMovement.RotateTowards(word.GetZed().transform);
                     break;
                 }
             }
