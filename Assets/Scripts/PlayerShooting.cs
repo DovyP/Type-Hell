@@ -8,6 +8,16 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private float bulletLineDuration;
     [SerializeField] private PlayerAnimations playerAnimations;
 
+    private void Start()
+    {
+        WordManager.onCharacterType += WordManager_onCharacterType;
+    }
+
+    private void WordManager_onCharacterType(Transform obj)
+    {
+        ShootLine(obj);
+    }
+
     public void ShootLine(Transform shootPoint)
     {
         bulletLineRenderer.SetPosition(0, bulletLineOrigin.position);
