@@ -3,6 +3,7 @@ using UnityEngine;
 public class Zed : MonoBehaviour
 {
     [SerializeField] private ZedWordUI zedWordUI;
+    [SerializeField] private Transform shootPoint;
 
     private float zedSpeed;
 
@@ -24,5 +25,10 @@ public class Zed : MonoBehaviour
     public ZedWordUI GetZedWordUI()
     {
         return zedWordUI;
+    }
+
+    public Transform GetShootPoint()
+    {
+        return shootPoint;
     }
 }

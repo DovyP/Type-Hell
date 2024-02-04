@@ -43,4 +43,9 @@ public class Word
 
         return wordTyped;
     }
+
+    public Zed GetZed()
+    {
+        return zed;
+    }
 }
